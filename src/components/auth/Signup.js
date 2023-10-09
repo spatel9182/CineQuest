@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for programmatic navigation
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate for programmatic navigation
 import AuthService from "../services/AuthService";
+import "./Login.css";
 
 const Signup = () => {
   const navigate = useNavigate(); // Use useNavigate for navigation
@@ -59,53 +60,57 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="login-container">
+      <div className="left-side-image"></div>
+      <form onSubmit={handleSubmit} className="form-login">
+        <h2>Signup</h2>
+
         <div className="form-group">
-          <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
             name="username"
             value={formData.username}
             onChange={handleChange}
+            placeholder="Please enter your username"
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
+            placeholder="Please enter your email"
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
+            placeholder="Please enter your password"
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm Password</label>
           <input
             type="password"
             id="confirmPassword"
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
+            placeholder="Please confirm your password"
             required
           />
         </div>
+        <Link to="/login">Already have an account? Click here</Link>
+
         <button type="submit">Sign Up</button>
       </form>
     </div>
