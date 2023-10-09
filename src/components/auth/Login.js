@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../services/AuthService";
+import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -49,10 +50,10 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <div className="left-side-image"></div>
+      <form onSubmit={handleSubmit} className="form-login">
+        <h2>Login</h2>
         <div className="form-group">
-          <label htmlFor="emailOrUsername">Email or Username</label>
           <input
             type="text"
             id="emailOrUsername"
@@ -60,10 +61,10 @@ const Login = () => {
             value={formData.emailOrUsername}
             onChange={handleChange}
             required
+            placeholder="Enter your email address"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -71,8 +72,10 @@ const Login = () => {
             value={formData.password}
             onChange={handleChange}
             required
+            placeholder="Enter your password"
           />
         </div>
+        <Link to="/signup">Not Registered? Click here</Link>
         <button type="submit">Login</button>
       </form>
     </div>
