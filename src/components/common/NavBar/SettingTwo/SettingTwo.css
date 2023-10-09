@@ -1,0 +1,21 @@
+
+
+
+
+/* Style the circular div */
+.circle {
+    width: 5vw;
+    height: 5vw;
+    background-color: black; /* Background color for the circular div */
+    border-radius: 50%; /* Create a circular shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the SVG icon within the circular div */
+.circle img {
+    width: 70%; /* Adjust the size of the SVG icon */
+    height: auto;
+    max-width: 100%;
+}

@@ -1,0 +1,34 @@
+/* App.css */
+
+/* Global styles for the entire application */
+body {
+    margin: 0;
+    font-family: "Alpino", sans-serif;
+    background-color: #100f12;
+    color: #fff;
+    min-height: 100vh; 
+    display: flex; /* Use flexbox for layout */
+  }
+  
+  .App {
+    display: flex; /* Nested flex container to separate Sidebar and Main Content */
+    flex: 1; /* Distribute remaining space equally among children */
+    min-height: 100vh;
+    width: 100vw;
+    
+    
+  }
+  
+  /* Main Content styles */
+  .main-content {
+    flex: 1; /* Takes up the remaining space */
+    padding: 20px;
+    overflow: hidden;
+    
+    
+  }
+
+  
+  
+
+  

@@ -1,25 +1,40 @@
 // App.js
-
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Note the use of Routes instead of Switch
-import Navbar from "./components/common/Navbar"; // Adjust the import path as needed
-import Home from "./components/pages/Home"; // Import other pages as needed
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/common/NavBar/NavBar.jsx";
+import Sidebar from "./components/common/Sidebar/Sidebar.jsx";
+import Home from "./components/pages/Home";
 import Dashboard from "./components/pages/Dashboard";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 
+import './App.css';
+
 function App() {
+
+  const routes = [
+    { path: "/", text: "Home" },
+    { path: "/login", text: "Login" },
+    { path: "/signup", text: "Signup" },
+    { path: "/dashboard", text: "Dashboard" }
+    // Add more routes as needed
+  ];
   return (
     <Router>
       <div className="App">
-        <Navbar /> {/* Include the Navbar component here */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          {/* Add more routes for other pages */}
-        </Routes>
+
+        <Sidebar routes={routes} />{/* Include the Sidebar component here */}
+        
+        <div className="main-content"> {/* Use main-content as the class name */}
+        <Navbar className="mb10"/> 
+          <Routes >
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            {/* Add more routes for other pages */}
+          </Routes>
+        </div>
       </div>
     </Router>
   );

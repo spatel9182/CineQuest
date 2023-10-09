@@ -1,4 +1,5 @@
 import React from "react";
+import FeaturedMovie from "../FeaturedMovie/FeaturedMovie";
 
 const Home = () => {
   return (
