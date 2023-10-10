@@ -1,5 +1,9 @@
 /* App.css */
-
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 /* Global styles for the entire application */
 body {
     margin: 0;

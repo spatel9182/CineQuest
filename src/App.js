@@ -9,14 +9,17 @@ import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 
 import './App.css';
+import AboutUs from "./components/pages/AboutUs";
 
 function App() {
 
   const routes = [
     { path: "/", text: "Home" },
     { path: "/login", text: "Login" },
-    { path: "/signup", text: "Signup" },
-    { path: "/dashboard", text: "Dashboard" }
+    
+    { path: "/dashboard", text: "Dashboard" },
+    { path: "/about", text: "About" }
+
     // Add more routes as needed
   ];
   return (
@@ -32,6 +35,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/about" element={<AboutUs />} />
+
             {/* Add more routes for other pages */}
           </Routes>
         </div>

@@ -11,8 +11,8 @@ const NavBar = () => {
         <input className="searchInput" type="text" placeholder="Search" />
       </div>
       <div className="profileIndicator">
-        <img className="ellipse" alt="Ellipse" src="./images/ellipse-1.png" />
         <div className="text-wrapper">Sara John</div>
+        <img className="ellipse" alt="Ellipse" src="./images/ellipse-1.png" />
       </div>
     </div>
   );
