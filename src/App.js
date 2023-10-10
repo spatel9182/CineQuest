@@ -7,9 +7,12 @@ import Home from "./components/pages/Home"; // Import other pages as needed
 import Dashboard from "./components/pages/Dashboard";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
+import ChatBot from "./components/pages/ChatBot";
 
 function App() {
+
   return (
+
     <Router>
       <div className="App">
         <Navbar /> {/* Include the Navbar component here */}
@@ -20,6 +23,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           {/* Add more routes for other pages */}
         </Routes>
+        <ChatBot></ChatBot>
       </div>
     </Router>
   );
