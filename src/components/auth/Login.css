@@ -1,6 +1,6 @@
-body {
+/* body {
   background: url("../../assets/LoginPage.png");
-}
+} */
 .login-container {
   display: flex;
   align-items: center;

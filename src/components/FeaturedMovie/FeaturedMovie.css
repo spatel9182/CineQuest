@@ -1,0 +1,44 @@
+/* FeaturedMovie.css */
+.featuredCardContainer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  height: 490px;
+  text-decoration: none;
+  box-shadow: 10px 10px 50px 0px rgba(255, 255, 255, 0.41);
+  border-radius: 20px;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: relative;
+}
+
+.cardMedia {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.575);
+  background-blend-mode: darken;
+}
+
+.cardContent {
+  color: #fff;
+  width: 40%;
+}
+.cardContentRoot {
+  position: absolute;
+
+ 
+}
+
+@media screen and (max-width: 600px) {
+  .cardContent {
+    width: 100%;
+  }
+}

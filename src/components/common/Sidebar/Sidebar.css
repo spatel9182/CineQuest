@@ -1,0 +1,42 @@
+.sidebar {
+  width: 20vw;
+  background-color: #100f12;
+  color: #fff;
+  border-right: #333 1px solid;
+
+  padding: 10px 50px 10px 35px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.imageLink {
+  display: flex;
+  justify-content: center;
+}
+.genreImages {
+  padding: 3px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.image {
+  width: "70%";
+}
+.links {
+  color: #ac1b1b;
+  text-decoration: none;
+}
+.ListItem {
+  border-radius: 22px;
+}
+.active .ListItem {
+  background-color: #ac1b1b;
+  color: white;
+}
+
+.bigText {
+  color: #ac1b1b;
+  font-size: 30;
+}

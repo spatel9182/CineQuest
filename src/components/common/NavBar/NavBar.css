@@ -1,0 +1,51 @@
+.navbar {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #100f12;
+  
+  margin-bottom: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-wrapper{
+  font-weight: 300;
+}
+
+.ellipse{
+  width: 4vw;
+  height: auto;
+}
+
+input{
+  
+  padding: 20px;
+  color: white;
+
+  border-radius: 30px;
+}
+
+.searchInput{
+  height: inherit;
+  width: 100%;
+ 
+  background-color: black;
+  
+}
+.profileIndicator{
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 20%;
+
+}
+
+.profileIndicator *{
+  margin-right: 10px;
+}
+
+
