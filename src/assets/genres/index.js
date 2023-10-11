@@ -27,6 +27,7 @@ import dashboard from "./dashboard.png"
 import about from "./About Us.png"
 import signup from "./signup.png"
 import login from "./login.png"
+import contact from "./Contact.png"
 
 export default {
   action,
@@ -53,5 +54,5 @@ export default {
   upcoming,
   home,
   dashboard,
-  login, about, signup
+  login, about, signup, contact
 };

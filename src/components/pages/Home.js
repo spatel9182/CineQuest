@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FeaturedMovie from "../FeaturedMovie/FeaturedMovie";
-import { Box, CircularProgress, useMediaQuery, Typography } from '@mui/material';
+import { Box, CircularProgress, useMediaQuery, Typography, Divider } from '@mui/material';
 import MovieList from "../MovieList/MovieList";
 import Pagination from "../Pagination/Pagination";
 
@@ -13,8 +13,7 @@ const Home = () => {
   // sample data
   const [data, setData] = useState(null); // Initialize the data state
 
-  const lg = useMediaQuery((theme) => theme.breakpoints.only('lg'));
-  const numberOfMovies = lg ? 17 : 19;
+
 
 
   const apiKey = '9ac88c47d4d586add1154d12a91509f7';
@@ -22,6 +21,7 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch the data inside the useEffect hook
+    console.log("useEffect");
     fetch(`${tmdbEndpoint}?api_key=${apiKey}`)
       .then((response) => {
         if (!response.ok) {
@@ -31,6 +31,7 @@ const Home = () => {
       })
       .then((fetchedData) => {
         // Update the data state with the fetched data
+        console.log(fetchedData);
         setData(fetchedData);
       })
       .catch((error) => {
@@ -42,11 +43,23 @@ const Home = () => {
     <div className="home-container">
       <h2>Welcome to CineQuest!</h2>
       <p>Discover and explore the world of movies.</p>
-      {/* Add your homepage content here */}
+      <br />
+      <br />
 
-      <FeaturedMovie movie={data.results[0]} />
-      <MovieList movies={data} numberOfMovies={numberOfMovies} excludeFirst />
-      <Pagination currentPage={1} setPage={1} totalPages={data.total_pages} />
+
+      {data ? (
+        <>
+          <FeaturedMovie movie={data.results[0]} />
+          <br />
+
+          <MovieList movies={data} numberOfMovies={17} excludeFirst />
+          <Pagination currentPage={1} setPage={1} totalPages={data.total_pages} />
+        </>
+      ) : (
+        <div>Loading...</div>
+      )}
+
+
     </div>
   );
 };

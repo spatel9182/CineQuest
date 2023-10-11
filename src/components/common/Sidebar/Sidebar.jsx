@@ -56,7 +56,7 @@ function Sidebar({ routes }) {
         >
           Pages
         </ListSubheader>
-        {console.log(routes)}
+        
         {routes.map(({ text, path }) => (
           <NavLink
             key={text}
@@ -74,7 +74,8 @@ function Sidebar({ routes }) {
                 />
               </ListItemIcon>
               <ListItemText>
-                {text === "About" ? "About Us" : text}
+                {text === "About" ? "About Us" : text }
+                
               </ListItemText>
             </ListItem>
           </NavLink>

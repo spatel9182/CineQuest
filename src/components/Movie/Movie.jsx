@@ -1,22 +1,68 @@
-import React from 'react';
-import { Typography, Grid, Grow, Tooltip, Rating } from '@mui/material';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Typography, Grid, Grow, Tooltip, Rating } from "@mui/material";
+import { Link } from "react-router-dom";
 
-import useStyles from './styles';
+
 
 function Movie({ movie, i }) {
-  const classes = useStyles();
+  
 
   return (
-    <Grid item xs={12} sm={6} md={4} lg={3} xl={2} className={classes.movie}>
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      lg={3}
+      xl={2}
+      style={{
+        padding: "10px",
+      }}
+    >
       <Grow in key={i} timeout={(i + 1) * 250}>
-        <Link className={classes.links} to={`/movie/${movie.id}`}>
+        <Link
+          style={{
+            alignItems: "center",
+            fontWeight: "bolder",
+            textDecoration: "none",
+
+            "&:hover": {
+              cursor: "pointer",
+            },
+          }}
+          to={`/movie/${movie.id}`}
+        >
           <img
-            src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : 'https://powderalloy.com/wp-content/uploads/2015/11/sidebar-placeholder.png'}
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                : "https://powderalloy.com/wp-content/uploads/2015/11/sidebar-placeholder.png"
+            }
             alt={movie.title}
-            className={classes.image}
+            style={{
+              borderRadius: "20px",
+              height: "300px",
+              marginBottom: "10px",
+              "&:hover": {
+                transform: "scale(1.02)",
+              },
+            }}
           />
-          <Typography className={classes.title} variant="h5">{movie.title}</Typography>
+          <Typography
+            style={{
+              color: "white",
+              textOverflow: "ellipsis",
+              width: "230px",
+              overflow: "hidden",
+              whiteSpace: "nowrap",
+              marginTop: "10px",
+              marginBottom: 0,
+              textAlign: "center",
+            }}
+            variant="h5"
+          >
+            {movie.title}
+          </Typography>
           <Tooltip disableTouchListener title={`${movie.vote_average} / 10`}>
             <div>
               <Rating readOnly value={movie.vote_average / 2} precision={0.1} />

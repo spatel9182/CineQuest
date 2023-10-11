@@ -4,8 +4,8 @@
 
 /* Style the circular div */
 .circle {
-    width: 5vw;
-    height: 5vw;
+    width: 4vw;
+    height: 4vw;
     background-color: black; /* Background color for the circular div */
     border-radius: 50%; /* Create a circular shape */
     display: flex;

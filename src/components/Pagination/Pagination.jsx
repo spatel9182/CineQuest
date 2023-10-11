@@ -3,10 +3,10 @@ import { Typography, Button } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 
-import useStyles from "./styles";
+
 
 function Pagination({ currentPage, setPage, totalPages }) {
-  const classes = useStyles();
+
 
   const handlePrev = () => {
     if (currentPage !== 1) {
@@ -22,26 +22,43 @@ function Pagination({ currentPage, setPage, totalPages }) {
   if (totalPages === 0) return null;
 
   return (
-    <div className={classes.container}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "1.5rem",
+      }}
+    >
       <Button
         // startIcon={<NavigateBeforeIcon />}
         onClick={handlePrev}
         variant="contained"
-        className={classes.button}
+        style={{
+          margin: "30px 2px",
+        }}
         color="primary"
         type="button"
         size="medium"
       >
         <NavigateBeforeIcon />
       </Button>
-      <Typography variant="h6" className={classes.pageNumber}>
+      <Typography
+        variant="h6"
+        style={{
+          margin: "0 30px !important",
+          color: "white",
+        }}
+      >
         {currentPage}
       </Typography>
       <Button
         // endIcon={<NavigateNextIcon />}
         onClick={handleNext}
         variant="contained"
-        className={classes.button}
+        style={{
+          margin: "30px 2px",
+        }}
         color="primary"
         type="button"
         size="medium"
