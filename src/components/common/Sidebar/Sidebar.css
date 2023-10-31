@@ -1,7 +1,21 @@
+/* Responsive Sidebar Styles */
 .sidebar {
-  width: 20vw;
+  width: 250px; /* Default width for desktop */
   background-color: #100f12;
   color: #fff;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  /* Adjust for smaller screens, e.g., tablets and mobile devices */
+  .sidebar {
+    width: 100%; /* Full width for mobile */
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+.sidebar {
   border-right: #333 1px solid;
 
   padding: 10px 50px 10px 35px;

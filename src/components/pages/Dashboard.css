@@ -1,4 +1,36 @@
-#DashboardContainer *{
-    font-Family: "Alpino, sans-serif";
-      color: #fff;
+#DashboardContainer * {
+  font-family: "Alpino, sans-serif";
+  color: #fff;
+}
+
+.DashboardForm *{
+  margin-bottom: 10px;
+
+}
+
+/* Responsive styles for screens 768px or smaller */
+@media (max-width: 768px) {
+  #DashboardContainer {
+    padding: 10px; /* Reduce container padding for smaller screens */
+  }
+
+  /* Adjust the width of playlist items */
+  #DashboardContainer .playlist-item {
+    width: 100%; /* Make each playlist item take full width for smaller screens */
+  }
+
+  /* Adjust font sizes for smaller screens */
+  #DashboardContainer .playlist-item .playlist-title {
+    font-size: 1.5rem;
+  }
+
+  /* Adjust the width of input fields */
+  #DashboardContainer .input-field {
+    width: 100%; /* Make input fields take full width for smaller screens */
+  }
+
+  /* Center the text inside the Profile Photo section */
+  #DashboardContainer .profile-photo-text {
+    text-align: center;
+  }
 }
