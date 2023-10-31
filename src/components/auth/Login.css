@@ -74,3 +74,20 @@
   align-self: flex-end;
   margin-right: 30px;
 }
+@media screen and (max-width: 768px) {
+  .login-container {
+    flex-wrap: wrap;
+  }
+  .left-side-image {
+    display: none;
+  }
+  .form-login {
+    flex-basis: 100%;
+  }
+  .form-login h2 {
+    margin-bottom: 20px;
+  }
+  .form-login a {
+    align-self: center;
+  }
+}

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate for programmatic navigation
+import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../services/AuthService";
 import "./Login.css";
 
 const Signup = () => {
-  const navigate = useNavigate(); // Use useNavigate for navigation
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -21,17 +21,14 @@ const Signup = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log("button clicked");
     e.preventDefault();
     try {
-      // Replace this example signupData with actual form data
       const signupData = {
         username: formData.username,
         email: formData.email,
         password: formData.password,
       };
 
-      // Send a POST request to your API
       const response = await fetch(
         "https://moviesearch-api.onrender.com/auth/signup",
         {
@@ -47,14 +44,15 @@ const Signup = () => {
         throw new Error("Network response was not ok");
       }
 
-      // Handle the response data as needed (e.g., success message, redirect)
       const data = await response.json();
       console.log("Signup successful:", data);
+
+      // Save the user token in local storage after successful signup
+      localStorage.setItem("userToken", data.token);
 
       // Redirect to the login page upon successful signup
       navigate("/login");
     } catch (error) {
-      // Handle signup error (display an error message, etc.)
       console.error("Error during signup:", error);
     }
   };
