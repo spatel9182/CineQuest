@@ -1,3 +1,4 @@
+// New update in dashboard
 import React, { useEffect, useState } from "react";
 import { Container, Typography, Paper, Box, Grid, Button, TextField, Avatar, Divider } from "@mui/material";
 import MovieList from "../MovieList/MovieList";
