@@ -37,7 +37,12 @@ function App() {
         <div className="main-content"> {/* Use main-content as the class name */}
           <Navbar className="mb10" />
           <Routes >
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={
+              <React.Fragment>
+                <Home />
+                <NewsletterForm />
+              </React.Fragment>
+            } />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
@@ -47,7 +52,7 @@ function App() {
             {/* Add more routes for other pages */}
           </Routes>
           <ChatBot></ChatBot>
-          <NewsletterForm></NewsletterForm>
+
         </div>
       </div>
     </Router>
