@@ -13,7 +13,6 @@ const NewsletterForm = () => {
         <form onSubmit={handleSubmit}>
             <h1> Subscribe to our newsletter</h1>
             <br />
-            div
             <input
                 type="email"
                 value={email}
