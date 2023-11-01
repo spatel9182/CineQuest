@@ -1,4 +1,3 @@
-// New update in dashboard -sprint2
 import React, { useEffect, useState } from "react";
 import { Container, Typography, Paper, Box, Grid, Button, TextField, Avatar, Divider } from "@mui/material";
 import MovieList from "../MovieList/MovieList";
