@@ -53,29 +53,41 @@
     cursor: pointer;
 }
 
-.messages {
-    max-height: 300px;
-    overflow-y: scroll;
-    padding: 10px;
-}
-
 .message {
     margin-bottom: 10px;
     padding: 8px 12px;
     border-radius: 4px;
     word-wrap: break-word;
+    max-width: 70%;
+}
+
+.messages {
+    max-height: 300px;
+    overflow-y: auto;
+    width: 300px;
 }
 
 .user {
     background-color: #ac1b1b;
     /* Darker red */
+    text-align: right;
     align-self: flex-end;
-    color: #fff;
+    color: rgb(255, 255, 255);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
+
 .bot {
-    background-color: #F4F4F4;
+    background-color: #5a5a5a;
+    text-align: left;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
 
 .input {
     display: flex;

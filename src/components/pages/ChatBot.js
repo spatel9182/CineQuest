@@ -83,13 +83,13 @@ const ChatBot = () => {
                                 }
                             }}
                         />
-                        <button onClick={() => handleSendMessage(inputValue)}>Send</button>
+                        <button onClick={() => handleSendMessage(inputValue)}>⇨</button>
                     </div>
                 </div>
             ) : (
                 <div className="chat-icon" onClick={toggleChat}>
                     <span role="img" aria-label="Chat Icon">
-                        💬
+                        🤖
                     </span>
                 </div>
             )}
