@@ -1,3 +1,4 @@
+//31st oct
 import React, { useState } from 'react';
 import "../../css/newsletter.css";
 
