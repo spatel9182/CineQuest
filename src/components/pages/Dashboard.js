@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, Paper, Box, Grid, Button, TextField, Avatar,Divider} from "@mui/material";
+import { Container, Typography, Paper, Box, Grid, Button, TextField, Avatar, Divider } from "@mui/material";
 
 import "./Dashboard.css"
 

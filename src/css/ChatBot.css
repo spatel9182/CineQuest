@@ -1,20 +1,32 @@
 /* src/ChatBot.css */
 
+
 .chatbot {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    font-family: Arial, sans-serif;
+    font-family: Satoshi;
+}
+
+.chat-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
 }
 
 .chat-icon {
-    background-color: #ac1b1b;
+    background-color: white;
     /* Red color */
     color: #fff;
     border: none;
-    border-radius: 50%;
+    border-radius: 100%;
     font-size: 24px;
     padding: 10px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -25,20 +37,23 @@
     outline: none;
 }
 
-.chat-window {
-    max-width: 400px;
+/* .chat-window {
+    padding: 10px;
+    max-width: 600px;
     border: 1px solid #000;
-    /* Black border */
+
     border-radius: 8px;
     overflow: hidden;
     background-color: #fff;
     margin-bottom: 10px;
-}
+} */
 
 .header {
-    background-color: #ac1b1b;
+    color: #ac1b1b;
     /* Red color */
-    color: #fff;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: rgb(255, 218, 218);
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -48,39 +63,105 @@
 .close-btn {
     background: none;
     border: none;
-    font-size: 18px;
-    color: #fff;
+    font-weight: bold;
+    margin: 2px 2px;
+    font-size: 128x;
+    color: #ac1b1b;
     cursor: pointer;
 }
 
+.chatbot.open {
+    background-color: #fff;
+}
+
 .message {
+    display: flex;
+    /* Add this line */
+    align-items: center;
+
     margin-bottom: 10px;
     padding: 8px 12px;
     border-radius: 4px;
     word-wrap: break-word;
-    max-width: 70%;
+    max-width: 100%;
 }
+
+.message-content {
+    flex-grow: 1;
+    /* This will make the message take up all available space */
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.image-container {
+    margin-right: 10px;
+}
+
+.message-image {
+    width: 50px;
+    /* Adjust the width as needed */
+    height: 50px;
+    /* Adjust the height as needed */
+    border-radius: 50%;
+    /* To make it circular */
+}
+
+.user .image-container {
+    order: 1;
+    /* User image on the left */
+}
+
+.bot .image-container {
+    order: 2;
+    /* Bot image on the right */
+}
+
 
 .messages {
     max-height: 300px;
     overflow-y: auto;
-    width: 300px;
+    width: 320px;
+    margin: 20px;
 }
+
+.user,
+.bot {
+    display: inline-block;
+    max-width: 70%;
+
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+
 
 .user {
-    background-color: #ac1b1b;
-    /* Darker red */
-    text-align: right;
+    text-align: right !important;
     align-self: flex-end;
-    color: rgb(255, 255, 255);
+    background-color: #ac1b1b;
     border-top-right-radius: 0;
-    border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    float: right;
+    /* Keep user messages on the right */
+    clear: both;
+    /* Ensure messages don't overlap */
+    margin-left: 20%;
+    /* Adjust as necessary */
 }
 
-
 .bot {
-    background-color: #5a5a5a;
+    float: left !important;
+    /* Keep bot messages on the left */
+    clear: both;
+    margin-right: 20%;
+    background-color: #130707cf;
     text-align: left;
     align-self: flex-start;
     border-top-left-radius: 0;
@@ -88,45 +169,50 @@
     border-bottom-right-radius: 10px;
 }
 
-
 .input {
+    border-radius: 20px;
+    background-color: #fff;
     display: flex;
-    border-top: 1px solid #ccc;
+    align-items: center;
+    margin: 10px;
+    border: 1px solid #ccc;
 }
 
 input[type='text'] {
     flex: 1;
+    color: #000;
     padding: 10px;
     border: none;
     outline: none;
     font-size: 16px;
 }
 
-input[type='text']::placeholder {
-    color: #ccc;
-}
-
 button {
-    background-color: #000;
-    /* Black color */
-    color: #fff;
+    background-color: #fff;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+
+}
+
+
+input[type='text']::placeholder {
+    color: rgb(33, 33, 33);
 }
 
 button:focus {
     outline: none;
 }
 
-.chat-window {
-    max-width: 100%;
-    max-height: 100%;
-    border: 1px solid #000;
-    /* Black border */
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
-    margin-bottom: 10px;
+
+.send-btn img {
+    align-items: center;
+    width: 19px;
+    height: 19px;
+    align-content: center;
+    padding: 1px;
+    margin-right: 10px;
 }

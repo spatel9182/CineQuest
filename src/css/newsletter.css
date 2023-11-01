@@ -1,0 +1,63 @@
+/* src/css/newsletter.css */
+/* src/css/newsletter.css */
+
+body {
+    font-family: satoshi;
+    text-align: right;
+    align-items: center;
+}
+
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: r#100f12;
+    /* Add background color */
+    box-shadow: 0 2px 4px rgba(142, 104, 104, 0.1);
+    /* Add shadow */
+}
+
+
+input[type="email"] {
+    width: 400px;
+    padding: 10px;
+    color: #100f12;
+    margin: 20px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type='text']::placeholder {
+    color: rgb(33, 33, 33);
+}
+
+button[type="submit"] {
+    background-color: #ac1b1b;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30%;
+    text-align: right;
+    align-content: flex-end;
+    align-items: flex-end;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #721717;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 90%;
+    }
+}
