@@ -18,8 +18,31 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can handle form submission here, e.g., send data to the server.
-    console.log(formData);
+
+    const formDataJSON = JSON.stringify(formData);
+
+    fetch("/submitContactUsQuerries", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: formDataJSON,
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Network response was not OK");
+        }
+      })
+      .then((data) => {
+        console.log("Form data sent successfully:", data);
+
+      })
+      .catch((error) => {
+        console.error("Error sending form data:", error);
+
+      });
   };
 
   return (

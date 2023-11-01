@@ -2,11 +2,7 @@ import React from "react";
 import { Typography, Grid, Grow, Tooltip, Rating } from "@mui/material";
 import { Link } from "react-router-dom";
 
-
-
 function Movie({ movie, i }) {
-  
-
   return (
     <Grid
       item
@@ -17,6 +13,8 @@ function Movie({ movie, i }) {
       xl={2}
       style={{
         padding: "10px",
+        display: "flex",
+        justifyContent: "center", // Center content horizontally
       }}
     >
       <Grow in key={i} timeout={(i + 1) * 250}>
@@ -25,7 +23,9 @@ function Movie({ movie, i }) {
             alignItems: "center",
             fontWeight: "bolder",
             textDecoration: "none",
-
+            display: "flex", // Center content horizontally
+            flexDirection: "column", // Center content vertically
+            textAlign: "center",
             "&:hover": {
               cursor: "pointer",
             },
@@ -57,7 +57,6 @@ function Movie({ movie, i }) {
               whiteSpace: "nowrap",
               marginTop: "10px",
               marginBottom: 0,
-              textAlign: "center",
             }}
             variant="h5"
           >

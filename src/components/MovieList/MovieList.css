@@ -1,0 +1,7 @@
+/* Responsive styles for screens 768px or smaller */
+@media (max-width: 768px) {
+    .MuiGrid-item {
+      flex-basis: 50%; /* Display 2 movies per row for smaller screens */
+    }
+  }
+  

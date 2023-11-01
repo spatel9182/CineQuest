@@ -1,6 +1,10 @@
+
+
+
+
 import React from "react";
 import { Container, Typography, Paper, Box } from "@mui/material";
-
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 const AboutUs = () => {
   return (
     <Container maxWidth="100%">
@@ -29,29 +33,78 @@ const AboutUs = () => {
             We are dedicated to curating a diverse selection of movies to cater to all tastes and preferences. From classic masterpieces to the latest blockbusters, we aim to be your go-to source for discovering and enjoying great films.
           </Typography>
           <Typography variant="body1" mt={2}>
-            If you have any questions, feedback, or suggestions, feel free to
-            reach out to us. We'd love to hear from you!
+            If you have any questions,{" "}
+            feedback
+            , or suggestions, feel free to <Link to="/contactus" style={{ color: "blue", textDecoration: "underline" }}>
+              reach out to us.
+            </Link> We'd love to hear from you!
           </Typography>
+
         </Box>
       </Paper>
-      <div style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
+
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          position: "relative",
+        }}
+      >
+        <img
+          alt="banner"
+          src="./images/LoginPage.png"
+          style={{
+            height: "auto",
+            width: "70%",
+            aspectRatio: "auto",
+            margin: "auto",
+            borderRadius: "10px",
+            border: "solid grey 1px",
+          }}
+        />
+        
 
 
-      }}>
-        <img alt="banner" src='./images/LoginPage.png' style={{
-          height: 'auto',
-          width: "70%",
-          aspectRatio: "auto",
-          margin: "Auto",
-          borderRadius: "10px",
-          border: "solid grey 1px"
-        }}></img>
+
+
+        <Link to="/" className="imageLink"
+
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+          }}
+        >
+          <Typography
+            style={{
+              color: "#FFF",
+              fontFamily: "Alpino",
+              fontSize: "5rem",
+              fontStyle: "normal",
+              fontWeight: 700,
+              lineHeight: "normal",
+            }}
+          >
+            Cine
+          </Typography>
+          <Typography
+            style={{
+              color: "#AC1B1B",
+              fontFamily: "Alpino",
+              fontSize: "5rem",
+              fontStyle: "normal",
+              fontWeight: 700,
+              lineHeight: "normal",
+            }}
+          >
+            Quest
+          </Typography>
+        </Link>
+
       </div>
-
-
     </Container>
   );
 };

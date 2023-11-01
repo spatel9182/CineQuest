@@ -1,4 +1,6 @@
 // App.js
+
+// new update
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/common/NavBar/NavBar.jsx";
@@ -56,6 +58,8 @@ function App() {
         </div>
       </div>
     </Router>
+
+
   );
 }
 
