@@ -39,6 +39,7 @@ function App() {
           <Routes >
             <Route path="/" element={
               <React.Fragment>
+
                 <Home />
                 <NewsletterForm />
               </React.Fragment>
