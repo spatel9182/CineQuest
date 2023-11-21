@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthService from "../services/AuthService";
 import "./Login.css";
 
 const Signup = () => {
@@ -47,14 +46,19 @@ const Signup = () => {
       const data = await response.json();
       console.log("Signup successful:", data);
 
-      // Save the user token in local storage after successful signup
-      localStorage.setItem("userToken", data.token);
+      // Save the user token in a cookie after successful signup
+      setCookie("userToken", data.token);
 
       // Redirect to the login page upon successful signup
       navigate("/login");
     } catch (error) {
       console.error("Error during signup:", error);
     }
+  };
+
+  // Function to set a cookie
+  const setCookie = (name, value) => {
+    document.cookie = `${name}=${value}; path=/`;
   };
 
   return (
