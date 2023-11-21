@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("userToken");
+    const token = getCookie("userToken");
 
     if (token) {
       // If a user is already logged in, you can redirect them to the dashboard.
@@ -46,8 +46,8 @@ const Login = () => {
       } else {
         const data = await response.json();
 
-        // Save the user token in local storage
-        localStorage.setItem("userToken", data.token);
+        // Save the user token in a cookie
+        setCookie("userToken", data.token);
 
         // Redirect to the dashboard for a successful login
         navigate("/dashboard");
@@ -55,6 +55,18 @@ const Login = () => {
     } catch (error) {
       console.error("Login error:", error);
     }
+  };
+
+  // Function to get a cookie by name
+  const getCookie = (name) => {
+    const value = "; " + document.cookie;
+    const parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+  };
+
+  // Function to set a cookie
+  const setCookie = (name, value) => {
+    document.cookie = `${name}=${value}; path=/`;
   };
 
   return (

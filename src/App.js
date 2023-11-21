@@ -14,52 +14,53 @@ import Signup from "./components/auth/Signup";
 import ChatBot from "./components/pages/ChatBot";
 import NewsletterForm from "./components/pages/Newsletterform.js";
 
-import './App.css';
+import "./App.css";
 import AboutUs from "./components/pages/AboutUs";
+import MovieDetails from "./components/pages/Moviedetails.js";
 
 function App() {
-
   const routes = [
     { path: "/", text: "Home" },
     { path: "/login", text: "Login" },
     { path: "/dashboard", text: "Dashboard" },
     { path: "/about", text: "About" },
-    { path: "/contactus", text: "Contact" }
+    { path: "/contactus", text: "Contact" },
 
     // Add more routes as needed
   ];
   return (
-
     <Router>
       <div className="App">
+        <Sidebar routes={routes} />
+        {/* Include the Sidebar component here */}
 
-        <Sidebar routes={routes} />{/* Include the Sidebar component here */}
-
-        <div className="main-content"> {/* Use main-content as the class name */}
+        <div className="main-content">
+          {" "}
+          {/* Use main-content as the class name */}
           <Navbar className="mb10" />
-          <Routes >
-            <Route path="/" element={
-              <React.Fragment>
-
-                <Home />
-                <NewsletterForm />
-              </React.Fragment>
-            } />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <React.Fragment>
+                  <Home />
+                  <NewsletterForm />
+                </React.Fragment>
+              }
+            />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/movie/:movieId" element={<MovieDetails />} />
 
             {/* Add more routes for other pages */}
           </Routes>
           <ChatBot></ChatBot>
-
         </div>
       </div>
     </Router>
-
-
   );
 }
 
