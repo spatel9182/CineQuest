@@ -1,21 +1,21 @@
 // App.js
 
 // new update
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/common/NavBar/NavBar.jsx';
-import Sidebar from './components/common/Sidebar/Sidebar.jsx';
-import Home from './components/pages/Home';
-import Dashboard from './components/pages/Dashboard';
-import ContactUs from './components/pages/ContactUs.js';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/common/NavBar/NavBar.jsx";
+import Sidebar from "./components/common/Sidebar/Sidebar.jsx";
+import Home from "./components/pages/Home";
+import Dashboard from "./components/pages/Dashboard";
+import ContactUs from "./components/pages/ContactUs.js";
 
-import Actor from './components/actor/Actor.js';
+import Actor from "./components/actor/Actor.js";
 
-import Login from './components/auth/Login';
-import Signup from './components/auth/Signup';
+import Login from "./components/auth/Login";
+import Signup from "./components/auth/Signup";
 // import ChatBot from './components/pages/ChatBot';
 
-import NewsletterForm from './components/pages/Newsletterform.js';
+import NewsletterForm from "./components/pages/Newsletterform.js";
 
 import "./App.css";
 import AboutUs from "./components/pages/AboutUs";
@@ -57,6 +57,7 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/movie/:movieId" element={<MovieDetails />} />
+            <Route path="/artist/:artistId" element={<Actor />} />
 
             {/* Add more routes for other pages */}
           </Routes>
