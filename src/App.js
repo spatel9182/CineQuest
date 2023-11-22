@@ -9,10 +9,14 @@ import Home from './components/pages/Home';
 import Dashboard from './components/pages/Dashboard';
 import ContactUs from './components/pages/ContactUs.js';
 
+import Actor from './components/actor/Actor.js';
+
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 // import ChatBot from './components/pages/ChatBot';
+
 import NewsletterForm from './components/pages/Newsletterform.js';
+
 
 import './App.css';
 import AboutUs from './components/pages/AboutUs';
@@ -24,6 +28,7 @@ function App() {
     { path: '/dashboard', text: 'Dashboard' },
     { path: '/about', text: 'About' },
     { path: '/contactus', text: 'Contact' },
+    { path: '/actor/:id', text: 'Actor' }, // New route for Actor pages
 
     // Add more routes as needed
   ];
@@ -52,7 +57,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contactus" element={<ContactUs />} />
-
+            <Route path="/actor/:id" element={<Actor />} />
             {/* Add more routes for other pages */}
           </Routes>
           {/* <ChatBot></ChatBot> */}
