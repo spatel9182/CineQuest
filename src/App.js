@@ -17,18 +17,17 @@ import Signup from './components/auth/Signup';
 
 import NewsletterForm from './components/pages/Newsletterform.js';
 
-
-import './App.css';
-import AboutUs from './components/pages/AboutUs';
+import "./App.css";
+import AboutUs from "./components/pages/AboutUs";
+import MovieDetails from "./components/pages/Moviedetails.js";
 
 function App() {
   const routes = [
-    { path: '/', text: 'Home' },
-    { path: '/login', text: 'Login' },
-    { path: '/dashboard', text: 'Dashboard' },
-    { path: '/about', text: 'About' },
-    { path: '/contactus', text: 'Contact' },
-    { path: '/actor/:id', text: 'Actor' }, // New route for Actor pages
+    { path: "/", text: "Home" },
+    { path: "/login", text: "Login" },
+    { path: "/dashboard", text: "Dashboard" },
+    { path: "/about", text: "About" },
+    { path: "/contactus", text: "Contact" },
 
     // Add more routes as needed
   ];
@@ -39,7 +38,7 @@ function App() {
         {/* Include the Sidebar component here */}
 
         <div className="main-content">
-          {' '}
+          {" "}
           {/* Use main-content as the class name */}
           <Navbar className="mb10" />
           <Routes>
@@ -57,7 +56,8 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contactus" element={<ContactUs />} />
-            <Route path="/actor/:id" element={<Actor />} />
+            <Route path="/movie/:movieId" element={<MovieDetails />} />
+
             {/* Add more routes for other pages */}
           </Routes>
           {/* <ChatBot></ChatBot> */}

@@ -1,26 +1,44 @@
-//Dashboard new updated file
 import React, { useEffect, useState } from "react";
-import { Container, Typography, Paper, Box, Grid, Button, TextField, Avatar, Divider } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Paper,
+  Box,
+  Grid,
+  Button,
+  TextField,
+  Avatar,
+  Divider,
+} from "@mui/material";
 import MovieList from "../MovieList/MovieList";
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-
 
 // Dashboard Component
 const Dashboard = () => {
+  const navigate = useNavigate();
 
-  // sample data
+  // Sample data
   const [data, setData] = useState(null); // Initialize the data state
 
-  const apiKey = '9ac88c47d4d586add1154d12a91509f7';
-  const tmdbEndpoint = 'https://api.themoviedb.org/3/trending/movie/week';
+  const apiKey = "9ac88c47d4d586add1154d12a91509f7";
+  const tmdbEndpoint = "https://api.themoviedb.org/3/trending/movie/week";
 
   useEffect(() => {
-    // Fetch the data inside the useEffect hook
+    // Check if the user is logged in
+    const token = getCookie("userToken");
+
+    if (!token) {
+      // If the user is not logged in, redirect to the login page
+      navigate("/login");
+    }
+
+    // Fetch the data inside the useEffect hook if the user is authenticated
     console.log("useEffect");
     fetch(`${tmdbEndpoint}?api_key=${apiKey}`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
@@ -31,20 +49,26 @@ const Dashboard = () => {
       })
       .catch((error) => {
         // Handle any errors here
-        console.error('Error:', error);
+        console.error("Error:", error);
       });
-  }, []); // Empty dependency array to fetch data on component mount
+  }, [navigate]); // Add navigate to the dependency array
 
+  // Function to get a cookie by name
+  const getCookie = (name) => {
+    const value = "; " + document.cookie;
+    const parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+  };
 
   return (
-    <Container maxWidth="lg" id="DashboardContainer"
-
-    >
+    <Container maxWidth="lg" id="DashboardContainer">
       <Typography variant="h4" gutterBottom>
         Movie App Dashboard
       </Typography>
       <Typography variant="body1">
-        Welcome to your movie app dashboard. Here, you can manage your playlists, change your password, edit your profile, and update your profile photo.
+        Welcome to your movie app dashboard. Here, you can manage your
+        playlists, change your password, edit your profile, and update your
+        profile photo.
       </Typography>
 
       {/* Section: My Playlists */}
@@ -70,12 +94,7 @@ const Dashboard = () => {
             fullWidth
             mt={2}
           />
-          <TextField
-            label="New Password"
-            type="password"
-            fullWidth
-            mt={2}
-          />
+          <TextField label="New Password" type="password" fullWidth mt={2} />
           <TextField
             label="Confirm New Password"
             type="password"
@@ -115,7 +134,11 @@ const Dashboard = () => {
       <Paper elevation={3} mt={3} sx={{ backgroundColor: "#100f12" }}>
         <Box p={2} className="DashboardForm">
           <Typography variant="h6">User Data</Typography>
-          <Avatar alt="Your Profile Photo" src="./images/your-profile-photo.jpg" sx={{ width: 150, height: 150, mt: 2 }} />
+          <Avatar
+            alt="Your Profile Photo"
+            src="./images/your-profile-photo.jpg"
+            sx={{ width: 150, height: 150, mt: 2 }}
+          />
           <Typography variant="body1">
             Full Name: {sessionStorage.getItem("fullName") || "N/A"}
           </Typography>
@@ -128,9 +151,6 @@ const Dashboard = () => {
         </Box>
       </Paper>
     </Container>
-
-
-
   );
 };
 
