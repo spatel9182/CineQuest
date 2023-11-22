@@ -9,9 +9,12 @@ import Home from './components/pages/Home';
 import Dashboard from './components/pages/Dashboard';
 import ContactUs from './components/pages/ContactUs.js';
 
+import Actor from './components/actor/Actor.js';
+
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 // import ChatBot from './components/pages/ChatBot';
+
 import NewsletterForm from './components/pages/Newsletterform.js';
 
 import "./App.css";
