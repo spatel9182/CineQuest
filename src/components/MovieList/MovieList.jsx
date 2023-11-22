@@ -17,7 +17,7 @@ function MovieList({ movies, numberOfMovies, excludeFirst }) {
       }}
     >
       {movies &&
-        movies.results
+        movies
           .slice(startFrom, numberOfMovies)
           .map((movie, i) => <Movie key={i} movie={movie} i={i} />)}
     </Grid>

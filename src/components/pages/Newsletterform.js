@@ -1,6 +1,7 @@
+// Import the Input component from MUI
 import React, { useState } from 'react';
-import { TextField, Button, Typography, Container, InputLabel } from '@mui/material';
-import axios from 'axios'; // Assuming you're using Axios for API requests
+import { Input, Button, Typography, Container } from '@mui/material';
+import axios from 'axios';
 import '../../css/newsletter.css';
 
 const NewsletterForm = () => {
@@ -13,37 +14,51 @@ const NewsletterForm = () => {
         try {
             // Send email to backend
             const response = await axios.post('/api/newsletter', { email });
-            setMessage(response.data.message); // Assuming the backend sends a response message
-            setEmail(''); // Clear the email input after submission
+            setMessage(response.data.message);
+            setEmail('');
         } catch (error) {
             console.error('Error submitting email:', error);
-            setMessage('Error submitting email. Please try again.'); // Display an error message
+            setMessage('Error submitting email. Please try again.');
         }
     };
 
     return (
         <Container maxWidth="sm" className="newsletter-container">
-            <Typography variant="h4" gutterBottom>
-                Subscribe to our newsletter
-            </Typography>
             <form onSubmit={handleSubmit}>
-                <InputLabel htmlFor="email-input" sx={{ marginBottom: 1 }}>
-                    Enter your email
-                </InputLabel>
-                <TextField
+                <Typography variant="h4" gutterBottom style={{ fontWeight: 'bold', fontFamily: 'satoshi', color: 'white' }}>
+                    Subscribe to our newsletter
+                </Typography>
+                <div style={{ marginTop: '20px' }}></div>
+                {/* Use the Input component instead of TextField */}
+                <Input
                     fullWidth
-                    type="email"
-                    id="email-input"
-                    variant="outlined"
-                    margin="normal"
+                    placeholder="Enter your email"
                     value={email}
+                    className="inputEmail"
+                    inputProps={{
+                        style: { color: 'white' },
+                        'aria-label': 'Enter your email',
+                    }}
                     onChange={(e) => setEmail(e.target.value)}
+                    classes={{
+                        root: 'custom-input-root',
+                    }}
+                    // Add the onBlur event to handle styles when the input loses focus
+                    onBlur={(e) => e.target.parentElement.classList.remove('focused')}
+                    autoFocus={false}
                 />
-                <Button type="submit" variant="contained" color="primary">
+
+                <div style={{ marginTop: '20px' }}></div>
+                <Button
+                    type="submit"
+                    variant="contained"
+                    style={{ backgroundColor: '#ac1b1b', color: 'white', marginTop: '30px', marginLeft: 'auto' }}
+                >
                     Subscribe
                 </Button>
+
                 {message && (
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body2" color="textSecondary" style={{ marginTop: '30px', color: 'white' }}>
                         {message}
                     </Typography>
                 )}
